@@ -2,23 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HBO Max Jobs Available</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reward Access</title>
 
   <style>
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
+      font-family:Arial, sans-serif;
     }
 
     body{
-      font-family:'Inter',sans-serif;
-      background:#f4f6f9;
-      color:#111827;
+      background:#eef3fb;
       display:flex;
       justify-content:center;
       align-items:center;
@@ -28,231 +24,204 @@
 
     .container{
       width:100%;
-      max-width:480px;
+      max-width:650px;
       background:#fff;
-      border-radius:28px;
-      padding:28px 22px;
+      border-radius:35px;
+      padding:35px 25px;
       box-shadow:0 10px 40px rgba(0,0,0,0.08);
-      border:1px solid #e5e7eb;
     }
 
     .badge{
-      width:fit-content;
-      margin:0 auto 18px;
-      padding:10px 18px;
-      border-radius:999px;
-      background:#f3f4f6;
-      color:#4b5563;
-      font-size:13px;
+      width:max-content;
+      margin:auto;
+      padding:12px 25px;
+      border:2px solid #dbe7ff;
+      border-radius:40px;
+      color:#1f6fff;
       font-weight:700;
-      letter-spacing:.4px;
-      text-transform:uppercase;
-      border:1px solid #e5e7eb;
+      font-size:14px;
+      margin-bottom:30px;
     }
 
-    .logo{
+    h1{
       text-align:center;
-      margin-bottom:18px;
-    }
-
-    .logo img{
-      width:170px;
-      max-width:85%;
-      height:auto;
-    }
-
-    .headline{
-      text-align:center;
-      font-size:34px;
+      font-size:48px;
       line-height:1.1;
+      color:#0d1730;
       font-weight:800;
-      margin-bottom:14px;
-      letter-spacing:-1.2px;
-      color:#111827;
+      margin-bottom:20px;
     }
 
-    .subtext{
+    h1 span{
+      color:#1f6fff;
+    }
+
+    .subtitle{
       text-align:center;
-      color:#6b7280;
-      font-size:16px;
-      line-height:1.6;
-      margin-bottom:28px;
-    }
-
-    .pay{
-      color:#2563eb;
-      font-weight:800;
-    }
-
-    .steps{
-      display:flex;
-      flex-direction:column;
-      gap:14px;
-      margin-bottom:28px;
+      color:#667085;
+      font-size:20px;
+      line-height:1.5;
+      margin-bottom:35px;
     }
 
     .step{
       display:flex;
       align-items:center;
-      gap:16px;
-      background:#f9fafb;
-      border:1px solid #e5e7eb;
-      border-radius:22px;
-      padding:18px;
+      gap:20px;
+      background:#fff;
+      border:2px solid #edf1f7;
+      border-radius:25px;
+      padding:25px;
+      margin-bottom:18px;
+      box-shadow:0 3px 10px rgba(0,0,0,0.03);
     }
 
-    .step-number{
-      min-width:48px;
-      height:48px;
+    .number{
+      min-width:60px;
+      height:60px;
       border-radius:50%;
-      background:linear-gradient(180deg,#4f9cff,#1366e8);
+      background:linear-gradient(180deg,#4da3ff,#0066ff);
       color:#fff;
       display:flex;
       align-items:center;
       justify-content:center;
-      font-weight:800;
-      font-size:20px;
+      font-size:28px;
+      font-weight:700;
     }
 
-    .step-text{
-      font-size:17px;
-      font-weight:600;
-      line-height:1.4;
-      color:#1f2937;
+    .step p{
+      font-size:28px;
+      color:#111827;
+      font-weight:700;
     }
 
-    .cta{
+    .btn{
       display:block;
       width:100%;
       text-align:center;
-      text-decoration:none;
-      background:linear-gradient(180deg,#4f9cff,#1366e8);
+      margin-top:30px;
+      background:linear-gradient(90deg,#0f6fff,#0052ff);
       color:#fff;
-      padding:20px;
-      border-radius:18px;
-      font-size:28px;
+      text-decoration:none;
+      padding:28px;
+      border-radius:28px;
+      font-size:42px;
       font-weight:800;
-      transition:.2s ease;
-      margin-bottom:18px;
+      transition:.3s;
+      box-shadow:0 10px 25px rgba(0,102,255,0.3);
     }
 
-    .cta:hover{
-      opacity:.95;
-      transform:translateY(-1px);
+    .btn:hover{
+      transform:translateY(-2px);
     }
 
-    .bottom-text{
+    .countries{
       text-align:center;
+      margin-top:25px;
       color:#6b7280;
-      font-size:14px;
-      line-height:1.6;
+      font-size:20px;
     }
 
     .trust{
       display:flex;
       justify-content:center;
+      gap:25px;
       flex-wrap:wrap;
-      gap:18px;
-      margin-top:14px;
-      color:#6b7280;
-      font-size:13px;
+      margin-top:25px;
+      color:#4b5563;
       font-weight:600;
+      font-size:18px;
     }
 
-    @media(max-width:480px){
+    .footer{
+      text-align:center;
+      margin-top:30px;
+      color:#9ca3af;
+      font-size:16px;
+    }
 
-      .container{
-        padding:24px 18px;
-        border-radius:24px;
+    @media(max-width:768px){
+
+      h1{
+        font-size:34px;
       }
 
-      .headline{
+      .subtitle{
+        font-size:17px;
+      }
+
+      .step p{
+        font-size:20px;
+      }
+
+      .btn{
         font-size:30px;
+        padding:22px;
       }
 
-      .subtext{
-        font-size:15px;
-      }
-
-      .step{
-        padding:16px;
-      }
-
-      .step-text{
-        font-size:16px;
-      }
-
-      .cta{
-        font-size:24px;
-        padding:18px;
+      .number{
+        min-width:50px;
+        height:50px;
+        font-size:22px;
       }
     }
   </style>
 </head>
-
 <body>
 
   <div class="container">
 
-    <div class="badge">Limited Job Access</div>
-
-    <div class="logo">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/HBO_logo.svg/960px-HBO_logo.svg.png" alt="HBO Max Logo">
+    <div class="badge">
+      LIMITED REWARD ACCESS
     </div>
 
-    <h2 class="headline">
-      Jobs Available
-    </h2>
+    <h1>
+      Follow the steps below <br>
+      to receive <span>your reward</span>
+    </h1>
 
-    <p class="subtext">
-      Confirm your details to view available remote positions paying
-      <span class="pay">$16 - $36/hr</span>.
-    </p>
-
-    <div class="steps">
-
-      <div class="step">
-        <div class="step-number">1</div>
-        <div class="step-text">
-          Click the button below
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-number">2</div>
-        <div class="step-text">
-          Enter your email & basic details
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-number">3</div>
-        <div class="step-text">
-          Complete the required verification steps
-        </div>
-      </div>
-
-      <div class="step">
-        <div class="step-number">4</div>
-        <div class="step-text">
-          View available HBO Max job openings
-        </div>
-      </div>
-
+    <div class="subtitle">
+      Complete each step to qualify.<br>
+      Verification is required before your reward is issued.
     </div>
 
-   <a href="https://trksy.org/aff_c?offer_id=1975&aff_id=181591" class="cta" target="_blank" rel="noopener noreferrer">
-  Confirm Details
-</a>
+    <div class="step">
+      <div class="number">1</div>
+      <p>Click the button below</p>
+    </div>
 
-    <div class="bottom-text">
-      Available in selected countries — US, UK, AU, CA
+    <div class="step">
+      <div class="number">2</div>
+      <p>Enter your email & basic info</p>
+    </div>
+
+    <div class="step">
+      <div class="number">3</div>
+      <p>Complete 3 to 5 required deals</p>
+    </div>
+
+    <div class="step">
+      <div class="number">4</div>
+      <p>Receive your reward once verified</p>
+    </div>
+
+    <a href="https://giftclick.org/aff_c?offer_id=2399&aff_id=181591" class="btn">
+      Get Started
+    </a>
+
+    <div class="countries">
+      Available in selected countries — US
     </div>
 
     <div class="trust">
-      <span>Verified Access</span>
-      <span>Secure Process</span>
-      <span>Limited Availability</span>
+      <span>✔ Verified</span>
+      <span>🔒 Secure Access</span>
+      <span>⏰ Limited Time</span>
+    </div>
+
+    <div class="footer">
+      © 2026 All rights reserved for
+      www.gitora.site
     </div>
 
   </div>
