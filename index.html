@@ -1,390 +1,525 @@
 <!DOCTYPE html>
 <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>CodePen - A Pen by Zakaria Rhazal</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Target Rewards Program - Claim Your $750 Reward</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <title>SHEIN Reward</title>
+        :root {
+            --primary: #b91c1c;
+            --primary-light: #dc2626;
+            --primary-dark: #991b1b;
+            --background: #f9fafb;
+            --foreground: #1f2937;
+            --border: #e5e7eb;
+            --muted: #6b7280;
+        }
 
-  <style>
+        html {
+            background-color: var(--background);
+        }
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial, sans-serif;
-    }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                sans-serif;
+            color: var(--foreground);
+            background-color: var(--background);
+        }
 
-    body{
-      background:#eef2f7;
-      display:flex;
-      justify-content:center;
-      padding:20px;
-      color:#111827;
-    }
+        .trust-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 14px;
+            position: relative;
+        }
 
-    .container{
-      width:100%;
-      max-width:520px;
-    }
+        .close-banner {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
 
-    .card{
-      background:#fff;
-      border-radius:28px;
-      overflow:hidden;
-      box-shadow:0 8px 30px rgba(0,0,0,0.06);
-    }
+        .close-banner:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
 
-    /* TOP SHEIN CARD */
+        .hidden {
+            display: none !important;
+        }
 
-    .top-card{
-      background:#000;
-      color:#fff;
-      padding:34px 28px;
-      position:relative;
-    }
+        .hero-gradient {
+            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+        }
 
-    .reward-badge{
-      position:absolute;
-      top:22px;
-      right:22px;
-      background:#fff;
-      color:#000;
-      padding:10px 16px;
-      border-radius:999px;
-      font-size:13px;
-      font-weight:700;
-    }
+        .target-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+        }
 
-    .logo{
-      font-size:34px;
-      font-weight:800;
-      letter-spacing:5px;
-      margin-bottom:34px;
-    }
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-align: center;
+        }
 
-    .amount{
-      font-size:74px;
-      font-weight:800;
-      line-height:1;
-    }
+        .subtitle {
+            font-size: 16px;
+            color: var(--muted);
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-    .reward-text{
-      font-size:24px;
-      color:#d1d5db;
-      margin-top:10px;
-    }
+        .step-card {
+            display: flex;
+            align-items: flex-start;
+            padding: 24px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: white;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+        }
 
-    /* CONTENT */
+        .step-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
 
-    .content{
-      padding:28px;
-    }
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 18px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
 
-    .badge{
-      width:max-content;
-      margin:auto;
-      padding:10px 18px;
-      border:1px solid #ddd;
-      border-radius:999px;
-      font-size:13px;
-      font-weight:700;
-      color:#555;
-      margin-bottom:24px;
-    }
+        .step-content h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
 
-    h1{
-      text-align:center;
-      font-size:42px;
-      line-height:1.15;
-      margin-bottom:16px;
-      font-weight:800;
-    }
+        .step-content p {
+            font-size: 14px;
+            color: var(--muted);
+        }
 
-    .sub{
-      text-align:center;
-      color:#6b7280;
-      font-size:17px;
-      line-height:1.5;
-      margin-bottom:28px;
-    }
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 16px 48px;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(185, 28, 28, 0.3);
+            text-align: center;
+        }
 
-    /* STEPS */
+        .cta-button:hover {
+            background: var(--primary-light);
+            box-shadow: 0 15px 35px rgba(185, 28, 28, 0.4);
+            transform: scale(1.05);
+        }
 
-    .step{
-      display:flex;
-      align-items:center;
-      gap:18px;
-      background:#f7f7f9;
-      border:1px solid #ececec;
-      border-radius:22px;
-      padding:20px;
-      margin-bottom:14px;
-    }
+        .cta-button:active {
+            transform: scale(0.98);
+        }
 
-    .number{
-      min-width:54px;
-      height:54px;
-      border-radius:50%;
-      background:linear-gradient(180deg,#4ea1ff,#0066ff);
-      color:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:24px;
-      font-weight:700;
-    }
+        .disclaimer {
+            font-size: 13px;
+            color: var(--muted);
+            text-align: center;
+            margin-top: 16px;
+        }
 
-    .step-text{
-      font-size:18px;
-      font-weight:600;
-      line-height:1.4;
-    }
+        .faq-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
 
-    /* BUTTON */
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            background: white;
+            transition: all 0.3s ease;
+        }
 
-    .btn{
-      display:block;
-      width:100%;
-      text-align:center;
-      text-decoration:none;
-      background:linear-gradient(180deg,#4ea1ff,#0066ff);
-      color:#fff;
-      padding:20px;
-      border-radius:22px;
-      font-size:26px;
-      font-weight:700;
-      margin-top:24px;
-      transition:0.2s;
-    }
+        .faq-item.active {
+            border-color: var(--primary);
+            box-shadow: 0 10px 25px rgba(185, 28, 28, 0.1);
+        }
 
-    .btn:hover{
-      transform:scale(1.02);
-    }
+        .faq-header {
+            padding: 20px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            transition: background 0.3s ease;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--foreground);
+        }
 
-    .bottom{
-      text-align:center;
-      color:#777;
-      font-size:14px;
-      line-height:1.7;
-      margin-top:18px;
-    }
+        .faq-header:hover {
+            background: #f9fafb;
+        }
 
-    /* PROOF SECTION */
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
 
-    .proof-section{
-      margin-top:28px;
-      padding-bottom:30px;
-    }
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
 
-    .proof-title{
-      text-align:center;
-      font-size:28px;
-      font-weight:800;
-      margin-bottom:18px;
-      color:#111827;
-    }
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 24px;
+        }
 
-    .proof-grid{
-      display:flex;
-      flex-direction:column;
-      gap:18px;
-    }
+        .faq-item.active .faq-content {
+            max-height: 500px;
+            padding: 20px 24px;
+        }
 
-    .proof-grid a{
-      display:block;
-    }
+        .faq-text {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
 
-    .proof-grid img{
-      width:100%;
-      border-radius:24px;
-      box-shadow:0 6px 22px rgba(0,0,0,0.08);
-      display:block;
-      transition:0.2s;
-    }
+        .trust-signals {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
 
-    .proof-grid img:hover{
-      transform:scale(1.01);
-    }
+        .signal {
+            text-align: center;
+        }
 
-    /* RESPONSIVE */
+        .signal-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
 
-    @media(max-width:600px){
+        .signal-label {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 4px;
+        }
 
-      .top-card{
-        padding:28px 22px;
-      }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
 
-      .content{
-        padding:22px;
-      }
+            .step-card {
+                padding: 16px;
+            }
 
-      h1{
-        font-size:34px;
-      }
+            .target-logo {
+                width: 60px;
+                height: 60px;
+                font-size: 36px;
+            }
 
-      .amount{
-        font-size:58px;
-      }
+            .cta-button {
+                width: 100%;
+                padding: 14px 24px;
+            }
 
-      .reward-text{
-        font-size:20px;
-      }
+            .trust-signals {
+                gap: 15px;
+            }
+        }
 
-      .btn{
-        font-size:22px;
-      }
+        .fade-in {
+            animation: fadeIn 0.6s ease-in-out;
+        }
 
-      .step-text{
-        font-size:16px;
-      }
-    }
-
-    @media(max-width:420px){
-
-      h1{
-        font-size:30px;
-      }
-
-      .logo{
-        font-size:28px;
-      }
-
-      .amount{
-        font-size:50px;
-      }
-
-      .number{
-        min-width:48px;
-        height:48px;
-        font-size:20px;
-      }
-    }
-
-  </style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
-
 <body>
-
-  <div class="container">
-
-    <div class="card">
-
-      <!-- TOP CARD -->
-
-      <div class="top-card">
-
-        <div class="reward-badge">
-          $750 REWARD
-        </div>
-
-        <div class="logo">
-        
-        </div>
-
-        <div class="amount">
-          $750
-        </div>
-
-        <div class="reward-text">
-          SHEIN Shopping Reward
-        </div>
-
-      </div>
-
-      <!-- CONTENT -->
-
-      <div class="content">
-
-        <div class="badge">
-          LIMITED REWARD ACCESS
-        </div>
-
-        <h1>
-          Follow the steps below to receive your reward
-        </h1>
-
-        <div class="sub">
-          Complete each step to qualify. Verification is required before your reward is issued.
-        </div>
-
-        <!-- STEPS -->
-
-        <div class="step">
-          <div class="number">1</div>
-
-          <div class="step-text">
-            Click the button below
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="number">2</div>
-
-          <div class="step-text">
-            Enter your email & basic info
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="number">3</div>
-
-          <div class="step-text">
-            Complete 3 to 5 required deals
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="number">4</div>
-
-          <div class="step-text">
-            Receive your reward once verified
-          </div>
-        </div>
-
-        <!-- BUTTON -->
-
-        <a href="https://trksy.org/aff_c?offer_id=1229&aff_id=181591" class="btn">
-          Get Started
-        </a>
-
-        <div class="bottom">
-          Available in selected countries — US, UK, AU, CA
-          <br><br>
-          Verified &nbsp;&nbsp; Secure Access &nbsp;&nbsp; Limited Time
-        </div>
-
-      </div>
-
+    <!-- Trust Banner -->
+    <div class="trust-banner" id="trustBanner">
+        <span>3,500+ People Already Claimed</span>
+        <button class="close-banner" onclick="document.getElementById('trustBanner').classList.add('hidden')">
+            <i class="fas fa-times"></i>
+        </button>
     </div>
 
-<div class="proof-section">
+    <!-- Main Content -->
+    <main class="hero-gradient min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto">
+            <!-- Hero Section -->
+            <div class="text-center mb-12">
+                <div class="target-logo">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h1 class="fade-in">Target Rewards Program</h1>
+                <p class="subtitle fade-in">Claim your $750 reward towards Target</p>
 
-  <div class="proof-title">
-    Recent Reward Proofs 🎁
-  </div>
+                <!-- Trust Signals -->
+                <div class="trust-signals fade-in">
+                    <div class="signal">
+                        <div class="signal-number">3,500+</div>
+                        <div class="signal-label">Claims Completed</div>
+                    </div>
+                    <div class="signal">
+                        <div class="signal-number">4.8★</div>
+                        <div class="signal-label">Rating</div>
+                    </div>
+                    <div class="signal">
+                        <div class="signal-number">100%</div>
+                        <div class="signal-label">Secure</div>
+                    </div>
+                </div>
+            </div>
 
-  <div class="proof-grid">
+            <!-- Steps Section -->
+            <div class="mb-12 fade-in">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Click "Claim Now"</h3>
+                        <p>Start your journey to claiming the $750 reward</p>
+                    </div>
+                </div>
 
-    <a href="https://i.postimg.cc/ZqFcCJSC/upscalemedia-transformed.jpg" target="_blank">
-      <img
-        src="https://i.postimg.cc/ZqFcCJSC/upscalemedia-transformed.jpg"
-        alt="SHEIN reward proof"
-        loading="lazy">
-    </a>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Enter your email and basic info</h3>
+                        <p>Quick and secure registration</p>
+                    </div>
+                </div>
 
-    <a href="https://i.postimg.cc/3NWCSpDv/upscalemedia-transformed-1.jpg" target="_blank">
-      <img
-        src="https://i.postimg.cc/3NWCSpDv/upscalemedia-transformed-1.jpg"
-        alt="SHEIN haul proof"
-        loading="lazy">
-    </a>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Complete 4-5 sponsored deals</h3>
+                        <p>Unlock your reward through simple sponsor offers</p>
+                    </div>
+                </div>
 
-  </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Enjoy your $750 reward!</h3>
+                        <p>Use it towards your Target purchases</p>
+                    </div>
+                </div>
+            </div>
 
-</div>
+            <!-- CTA Section -->
+            <div class="text-center mb-16 fade-in">
+                <a href="https://trksy.org/aff_c?offer_id=250&aff_id=181591" target="_blank" rel="noopener noreferrer" class="cta-button">
+                    <i class="fas fa-zap"></i> Claim Your Reward Now
+                </a>
+                <p class="disclaimer">Completion of sponsored deals is required to claim your reward.</p>
+            </div>
 
-  </div>
+            <!-- FAQ Section -->
+            <div class="mt-20">
+                <h2 style="font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 40px;">Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-header" onclick="toggleFAQ(this)">
+                            How long do the deals take?
+                            <span class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </button>
+                        <div class="faq-content">
+                            <p class="faq-text">Most deals can be completed in 15-30 minutes. Some may take longer depending on the specific offer requirements. You can complete them at your own pace.</p>
+                        </div>
+                    </div>
 
+                    <div class="faq-item">
+                        <button class="faq-header" onclick="toggleFAQ(this)">
+                            What are deals?
+                            <span class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </button>
+                        <div class="faq-content">
+                            <p class="faq-text">Deals are sponsored offers from partner companies. They may include sign-ups, purchases, surveys, or other simple tasks. Each deal is straightforward and designed to be completed quickly.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-header" onclick="toggleFAQ(this)">
+                            How many deals do I have to do?
+                            <span class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </button>
+                        <div class="faq-content">
+                            <p class="faq-text">You need to complete 4-5 sponsored deals to qualify for your $750 reward. The exact number may vary based on the current offers available.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-header" onclick="toggleFAQ(this)">
+                            When will I receive my reward?
+                            <span class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </button>
+                        <div class="faq-content">
+                            <p class="faq-text">After completing all required deals, your reward will be processed within 7-14 business days. You'll receive a confirmation email with instructions on how to use your $750 Target reward.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-header" onclick="toggleFAQ(this)">
+                            Is my information secure?
+                            <span class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </button>
+                        <div class="faq-content">
+                            <p class="faq-text">Yes, we use industry-standard encryption and security protocols to protect your personal information. Your data is never shared with third parties without your consent.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer CTA -->
+            <div class="text-center mt-20 pb-12 fade-in">
+                <a href="https://trksy.org/aff_c?offer_id=250&aff_id=181591" target="_blank" rel="noopener noreferrer" class="cta-button">
+                    Claim Now
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleFAQ(button) {
+            const faqItem = button.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Toggle current FAQ
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.step-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
 </body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
 </html>
