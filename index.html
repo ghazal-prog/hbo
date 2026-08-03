@@ -1,378 +1,534 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>$750 Target Offer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$750 Target Gift Card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
 
-body{
-    background:#f5f5f5;
-    color:#222;
-}
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px 20px;
+        }
 
-.wrapper{
-    max-width:700px;
-    margin:auto;
-    padding:15px;
-}
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-/* CARD */
-.card{
-    background:white;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
-}
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: radial-gradient(circle 20px at center, white, white 20px, #CC0000 21px, #CC0000 35px, white 36px, white 40px, #CC0000 41px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(204, 0, 0, 0.3);
+        }
 
-/* HERO / BANNER with blur + overlay text */
-.hero{
-    position:relative;
-    height:220px;
-    overflow:hidden;
-}
+        .header h1 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
 
-.hero-bg{
-    position:absolute;
-    inset:0;
-    background:linear-gradient(135deg,#cc0000 0%,#ff4d4d 100%);
-    filter:blur(6px);
-    transform:scale(1.1); /* avoids blurred edges showing */
-}
+        .header p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
 
-.hero-overlay{
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,.25);
-}
+        .claim-btn {
+            background: linear-gradient(135deg, #E31836 0%, #CC0000 100%);
+            color: white;
+            border: none;
+            padding: 16px 60px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 4px 15px rgba(227, 24, 54, 0.3);
+        }
 
-.hero-text{
-    position:relative;
-    z-index:2;
-    height:100%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
+        .claim-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(227, 24, 54, 0.4);
+        }
 
-/* GIFT CARD */
-.gift-card{
-    width:280px;
-    height:170px;
-    background:linear-gradient(135deg,#ffffff 0%,#f5f5f5 100%);
-    border-radius:16px;
-    box-shadow:0 15px 35px rgba(0,0,0,.35);
-    position:relative;
-    overflow:hidden;
-    padding:18px 20px;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    transform:rotate(-3deg);
-}
+        .claim-btn:active {
+            transform: translateY(0);
+        }
 
-.gift-card:before{
-    content:"";
-    position:absolute;
-    top:-40px;
-    right:-40px;
-    width:140px;
-    height:140px;
-    background:#cc0000;
-    border-radius:50%;
-    opacity:.08;
-}
+        /* Rating Section */
+        /* Qualification Note */
+        .qualification-note {
+            background: linear-gradient(135deg, #FFF3E0 0%, #FFE5D9 100%);
+            border-left: 4px solid #E31836;
+            padding: 16px 18px;
+            border-radius: 8px;
+            margin: 25px 0;
+            text-align: center;
+            color: #333;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            font-weight: 500;
+        }
 
-.gift-card:after{
-    content:"";
-    position:absolute;
-    bottom:-50px;
-    left:-30px;
-    width:120px;
-    height:120px;
-    background:#cc0000;
-    border-radius:50%;
-    opacity:.06;
-}
+        .rating-section {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
 
-.gift-card-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    position:relative;
-    z-index:1;
-}
+        .stars {
+            font-size: 24px;
+            color: #4CAF50;
+            margin-bottom: 5px;
+        }
 
-.gift-card-chip{
-    width:34px;
-    height:24px;
-    background:linear-gradient(135deg,#e0b34d,#f7d98a);
-    border-radius:5px;
-}
+        .rating-text {
+            color: #666;
+            font-size: 0.95rem;
+        }
 
-.gift-card-label{
-    font-size:11px;
-    font-weight:700;
-    color:#cc0000;
-    text-transform:uppercase;
-    letter-spacing:1.5px;
-}
+        /* How It Works Section */
+        .how-it-works {
+            margin: 50px 0;
+            text-align: center;
+        }
 
-.gift-card-amount{
-    font-size:38px;
-    font-weight:800;
-    color:#cc0000;
-    position:relative;
-    z-index:1;
-    line-height:1;
-}
+        .how-it-works h2 {
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
 
-.gift-card-bottom{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    position:relative;
-    z-index:1;
-}
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
 
-.gift-card-dots{
-    font-size:14px;
-    letter-spacing:3px;
-    color:#999;
-    font-weight:700;
-}
+        .step {
+            text-align: center;
+            padding: 30px 20px;
+            background: #f9f9f9;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
 
-.gift-card-tag{
-    font-size:10px;
-    font-weight:700;
-    color:#888;
-    text-transform:uppercase;
-    letter-spacing:1px;
-}
+        .step:hover {
+            background: #f0f0f0;
+            transform: translateY(-5px);
+        }
 
-/* CONTENT */
-.content{
-    padding:25px;
-    text-align:center;
-}
+        .step-number {
+            background: #FFE5E9;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #E31836;
+        }
 
-.logo{
-    width:70px;
-    height:70px;
-    background:#cc0000;
-    border-radius:50%;
-    margin:-55px auto 0;
-    position:relative;
-    z-index:3;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border:4px solid white;
-    box-shadow:0 4px 10px rgba(0,0,0,.2);
-}
+        .step-label {
+            color: #E31836;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
 
-.logo img{
-    width:60px;
-    height:60px;
-    object-fit:contain;
-}
+        .step h3 {
+            font-size: 1.25rem;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
 
-h1{
-    margin-top:20px;
-    font-size:32px;
-    color:#cc0000;
-}
+        .step p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
 
-.subtitle{
-    font-size:17px;
-    margin:15px 0;
-    color:#444;
-}
+        /* FAQ Section */
+        .faq-section {
+            margin: 50px 0;
+        }
 
-/* DISCLOSURE */
-.disclosure{
-    font-size:12px;
-    color:#888;
-    margin:10px 0 5px;
-    line-height:1.5;
-}
+        .faq-section h2 {
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 700;
+        }
 
-/* STEPS */
-.steps{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:12px;
-    margin:25px 0;
-}
+        .faq-items {
+            max-width: 700px;
+            margin: 0 auto;
+        }
 
-.step{
-    background:#fafafa;
-    padding:15px 8px;
-    border-radius:15px;
-    border:1px solid #eee;
-}
+        .faq-item {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
 
-.number{
-    width:35px;
-    height:35px;
-    line-height:35px;
-    margin:auto;
-    background:#cc0000;
-    color:white;
-    border-radius:50%;
-    font-weight:bold;
-}
+        .faq-item:hover {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
 
-.step p{
-    margin-top:10px;
-    font-size:14px;
-    font-weight:bold;
-}
+        .faq-question {
+            background: #f9f9f9;
+            padding: 18px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #1a1a1a;
+            user-select: none;
+            transition: background 0.3s ease;
+        }
 
-/* BUTTON */
-.button{
-    display:block;
-    background:#cc0000;
-    color:white;
-    text-decoration:none;
-    padding:18px;
-    border-radius:50px;
-    font-size:22px;
-    font-weight:bold;
-    margin:20px auto;
-    max-width:400px;
-    text-align:center;
-    transition:background .2s ease;
-}
+        .faq-question:hover {
+            background: #f0f0f0;
+        }
 
-.button:hover{
-    background:#990000;
-}
+        .faq-toggle {
+            color: #E31836;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
 
-/* SOCIAL PROOF */
-.people{
-    margin-top:20px;
-    background:#fff0f0;
-    padding:15px;
-    border-radius:15px;
-    color:#555;
-    font-size:14px;
-    line-height:1.8;
-}
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
 
-/* FAQ */
-.faq{
-    margin-top:25px;
-    text-align:left;
-}
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 18px;
+            color: #666;
+            transition: all 0.3s ease;
+            line-height: 1.6;
+        }
 
-.faq h3{
-    margin-bottom:10px;
-    font-size:16px;
-}
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 18px;
+            border-top: 1px solid #eee;
+        }
 
-.faq p{
-    margin-bottom:12px;
-    color:#555;
-    font-size:14px;
-    line-height:1.5;
-}
+        /* Notification Section */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #FFE5E9;
+            border-left: 4px solid #E31836;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            font-size: 0.95rem;
+            color: #1a1a1a;
+            max-width: 320px;
+            animation: slideIn 0.5s ease;
+            z-index: 1000;
+        }
 
-/* MOBILE */
-@media(max-width:600px){
-    h1{ font-size:24px; }
-    .steps{ grid-template-columns:1fr; }
-    .content{ padding:18px; }
-    .button{ font-size:18px; }
-    .hero{ height:160px; }
-    .gift-card{ width:220px; height:140px; padding:14px 16px; }
-    .gift-card-amount{ font-size:30px; }
-}
-</style>
+        @keyframes slideIn {
+            from {
+                transform: translateX(-400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .gift-icon {
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+
+        .notification-name {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .notification-amount {
+            color: #E31836;
+            font-weight: 700;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px 15px;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .header p {
+                font-size: 0.95rem;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .how-it-works h2,
+            .faq-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .logo {
+                width: 70px;
+                height: 70px;
+                font-size: 40px;
+            }
+
+            .notification {
+                left: 10px;
+                right: 10px;
+                max-width: none;
+                bottom: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 20px 12px;
+                border-radius: 8px;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .header p {
+                font-size: 0.85rem;
+            }
+
+            .claim-btn {
+                padding: 14px 40px;
+                font-size: 1rem;
+            }
+
+            .step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+
+            .faq-question {
+                padding: 14px;
+                font-size: 0.95rem;
+            }
+
+            .notification {
+                font-size: 0.85rem;
+                padding: 12px 15px;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo"></div>
+            <h1>$750 Target Giftcard</h1>
+            <p>Shop everything you love at Target with this exclusive limited offer.</p>
+            <button class="claim-btn">Claim Now</button>
 
-<div class="wrapper">
-<div class="card">
-
-    <!-- HERO BANNER: blurred background + bold $750 overlay text -->
-    <div class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-text">
-            <div class="gift-card">
-                <div class="gift-card-top">
-                    <div class="gift-card-chip"></div>
-                    <div class="gift-card-label">Gift Card</div>
-                </div>
-                <div class="gift-card-amount">Target $750</div>
-                <div class="gift-card-bottom">
-                    <div class="gift-card-dots">•••• ••••</div>
-                    <div class="gift-card-tag">TARGET</div>
-                </div>
+            <!-- Qualification Note -->
+            <div class="qualification-note">
+                <strong>Important:</strong> To qualify for your Target gift card, complete the required deal from start to finish to unlock the full $750 reward. Once successfully completed, you'll be eligible to claim your reward.
             </div>
         </div>
+
+        <!-- Rating -->
+        <div class="rating-section">
+            <div class="stars">★★★★★</div>
+            <div class="rating-text">4.5 / 5 on ★ Trustpilot</div>
+        </div>
+
+        <!-- How It Works -->
+        <section class="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-label">STEP 1</div>
+                    <h3>Click the Button Below</h3>
+                    <p>Start by clicking the claim button to begin.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-label">STEP 2</div>
+                    <h3>Complete Required Offers</h3>
+                    <p>Finish the required deals to unlock your reward.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-label">STEP 3</div>
+                    <h3>Claim your $750 Gift Card</h3>
+                    <p>Receive your $750 Target Gift Card instantly.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-items">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Does it only work for students?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        No, it's available worldwide — anyone, anywhere can claim this offer. There are no restrictions based on student status or location.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is this really free?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, this is completely free! There are no hidden charges or fees. You only need to complete the required offers to receive your gift card.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does it take to receive my gift card?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Most users receive their gift card within 24-48 hours after completing all required offers. Some may receive it instantly depending on the offers completed.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What kind of tasks do I need to complete?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Tasks vary and may include signing up for services, filling out surveys, or downloading apps. Each task is optional, and you can choose which ones to complete.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I claim the reward multiple times?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        This offer is typically limited to one claim per person per account. However, you may be eligible for future promotions after completing this one.
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <div class="content">
-
-        <div class="logo">
-  <img  src="https://corporate.target.com/getmedia/0289d38f-1bb0-48f9-b883-cd05e19b8f98/Target_Bullseye-Logo_Red_transparent.png">
-</div>
-
-        <h1>Rewards US - Target $750</h1>
-
-        <p class="subtitle">
-            Complete the steps below to participate and unlock your reward opportunity.
-        </p>
-
-        <p class="disclosure">
-            This is a promotional offer operated by Target.
-        </p>
-
-        <div class="steps">
-            <div class="step">
-                <div class="number">1</div>
-                <p>Click Start</p>
-            </div>
-            <div class="step">
-                <div class="number">2</div>
-                <p>Enter Basic Info</p>
-            </div>
-            <div class="step">
-                <div class="number">3</div>
-                <p>Complete Partner Offers</p>
-            </div>
-        </div>
-
-        <a class="button" href="https://trksy.org/aff_c?offer_id=250&aff_id=181591">
-            🎁 Claim Your Reward
-        </a>
-
-        <div class="people">
-            ✅ Thousands of users are joining today<br>
-            ⭐ Complete required offers to qualify<br>
-            🔒 No upfront payment required
-        </div>
-
-        <div class="faq">
-            <h3>How it works</h3>
-            <p>1. Click the button and enter your information.</p>
-            <p>2. Complete the required promotional offers shown on the offer page.</p>
-            <p>3. After completing the requirements, your reward status will be reviewed.</p>
-        </div>
-
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <span class="gift-icon">🎯</span>
+        <span class="notification-name" id="notif-name">Sarah</span> from <span id="notif-country">USA</span> just got a <span class="notification-amount">$750</span> Target Gift Card.
     </div>
-</div>
-</div>
 
+    <script>
+        // Random names
+        const maleNames = ['James', 'Michael', 'David', 'Robert', 'John', 'William', 'Richard', 'Joseph', 'Thomas', 'Charles', 'Christopher', 'Daniel', 'Matthew', 'Anthony', 'Mark', 'Ryan', 'Jacob', 'Gary', 'Nicholas', 'Eric'];
+        const femaleNames = ['Sarah', 'Emma', 'Jennifer', 'Lisa', 'Maria', 'Jessica', 'Mary', 'Patricia', 'Linda', 'Barbara', 'Elizabeth', 'Susan', 'Jessica', 'Catherine', 'Anna', 'Donna', 'Michelle', 'Angela', 'Nicole', 'Mia'];
+        const countries = ['USA', 'Canada', 'United Kingdom'];
+
+        // FAQ Toggle Functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.querySelector('.faq-question').addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+
+        // Update notification randomly
+        function updateNotification() {
+            const randomName = Math.random() > 0.5 
+                ? maleNames[Math.floor(Math.random() * maleNames.length)]
+                : femaleNames[Math.floor(Math.random() * femaleNames.length)];
+            const randomCountry = countries[Math.floor(Math.random() * countries.length)];
+
+            document.getElementById('notif-name').textContent = randomName;
+            document.getElementById('notif-country').textContent = randomCountry;
+        }
+
+        // Update notification every 5-8 seconds
+        setInterval(updateNotification, Math.random() * 3000 + 5000);
+
+        // Claim button click handler
+        document.querySelector('.claim-btn').addEventListener('click', () => {
+            window.location.href = 'https://linkthem.net/aff_c?offer_id=250&aff_id=181591';
+        });
+
+        // Initial notification
+        updateNotification();
+    </script>
 </body>
 </html>
