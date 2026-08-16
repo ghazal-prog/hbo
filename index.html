@@ -1,1429 +1,620 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-57K9JQMBYD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claim Your $750 Target Gift Card | Shopper Survey Program</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --target-red: #CC0000;
+      --target-red-hover: #B30000;
+      --target-red-light: #FFF5F5;
+      --target-red-border: #FEE2E2;
+      --dark-gray: #0F172A;
+      --slate-600: #475569;
+      --slate-500: #64748B;
+      --light-gray: #F8FAFC;
+      --border-color: #E2E8F0;
+      --card-border: #EDF2F7;
+      --success-green: #10B981;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
 
-  gtag('config', 'G-57K9JQMBYD');
-</script>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-    <title>Rewards US - Target $750</title>
+    body {
+      background-color: #F3F4F6;
+      color: var(--dark-gray);
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+    /* Top Announcement Banner */
+    header {
+      background: linear-gradient(90deg, #990000 0%, var(--target-red) 50%, #990000 100%);
+      color: #FFFFFF;
+      text-align: center;
+      padding: 10px 20px;
+      font-weight: 600;
+      font-size: 0.8125rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
 
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f5f5;
-            color: #222;
-        }
+    /* Main Container Structure */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-        .hero {
-            position: relative;
-            height: 360px;
-            overflow: hidden;
-            background: #111;
-        }
+    /* Hero Section */
+    .hero {
+      background: #FFFFFF;
+      border-radius: 20px;
+      padding: 48px 40px;
+      margin-top: 32px;
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--border-color);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
 
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            background:
-                linear-gradient(135deg, #222, #555, #111);
-            filter: blur(3px);
-            transform: scale(1.05);
-        }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: var(--target-red);
+    }
 
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.45);
-        }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--target-red-light);
+      border: 1px solid var(--target-red-border);
+      color: var(--target-red);
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      letter-spacing: 0.2px;
+    }
 
-        .hero-text {
-            position: relative;
-            z-index: 2;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    .badge span {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: var(--target-red);
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px rgba(204, 0, 0, 0.2);
+    }
 
-        .gift-card {
-            width: 360px;
-            max-width: 85%;
-            height: 210px;
-            padding: 25px;
-            border-radius: 18px;
-            background: linear-gradient(135deg, #e31837, #b00020);
-            color: white;
-            box-shadow: 0 20px 50px rgba(0,0,0,.4);
-        }
+    h1 {
+      font-size: 2.5rem;
+      line-height: 1.25;
+      color: #0F172A;
+      margin-bottom: 24px;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+    }
 
-        .gift-card-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    h1 span {
+      color: var(--target-red);
+      background: linear-gradient(135deg, #CC0000 0%, #990000 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-        .gift-card-chip {
-            width: 45px;
-            height: 32px;
-            border-radius: 6px;
-            background: #e8c96a;
-        }
+    /* Brand Logo Presentation */
+    .hero-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 8px 0 24px 0;
+    }
 
-        .gift-card-label {
-            font-size: 15px;
-            font-weight: bold;
-        }
+    .hero-logo svg {
+      width: 80px;
+      height: 80px;
+      filter: drop-shadow(0 4px 10px rgba(204, 0, 0, 0.15));
+      transition: transform 0.3s ease;
+    }
 
-        .gift-card-amount {
-            font-size: 38px;
-            font-weight: 800;
-            margin-top: 35px;
-        }
+    .hero-logo svg:hover {
+      transform: scale(1.05);
+    }
 
-        .gift-card-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 28px;
-        }
+    .subtitle {
+      font-size: 1.125rem;
+      color: var(--slate-600);
+      margin-bottom: 28px;
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 400;
+    }
 
-        .gift-card-dots {
-            letter-spacing: 4px;
-        }
+    /* Social Proof Bar */
+    .social-proof {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 10px 20px;
+      background: var(--light-gray);
+      border: 1px solid var(--border-color);
+      border-radius: 9999px;
+      margin-bottom: 32px;
+      font-size: 0.875rem;
+      color: var(--slate-600);
+    }
 
-        .gift-card-tag {
-            font-weight: 900;
-            font-size: 18px;
-        }
+    .stars {
+      color: #F59E0B;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
 
-        .content {
-            max-width: 720px;
-            margin: -30px auto 80px;
-            position: relative;
-            z-index: 3;
-            background: white;
-            padding: 35px 25px;
-            border-radius: 16px;
-            box-shadow: 0 8px 30px rgba(0,0,0,.12);
-        }
+    .verified-icon {
+      color: var(--success-green);
+      font-weight: 700;
+    }
 
-        .logo {
-            text-align: center;
-            font-weight: 800;
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
+    .social-proof span strong {
+      color: var(--dark-gray);
+      font-weight: 600;
+    }
 
-        h1 {
-            text-align: center;
-            margin: 0;
-            font-size: 32px;
-        }
+    /* Call to Action Elements */
+    .cta-btn {
+      display: inline-block;
+      width: 100%;
+      max-width: 480px;
+      background: linear-gradient(180deg, #D60000 0%, var(--target-red) 100%);
+      color: white;
+      text-decoration: none;
+      font-size: 1.125rem;
+      font-weight: 700;
+      padding: 18px 32px;
+      border-radius: 12px;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 10px 20px -5px rgba(204, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+    }
 
-        .subtitle {
-            text-align: center;
-            color: #666;
-            font-size: 16px;
-            line-height: 1.6;
-            margin: 15px auto;
-        }
+    .cta-btn:hover {
+      background: linear-gradient(180deg, var(--target-red) 0%, var(--target-red-hover) 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 24px -4px rgba(204, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
 
-        .disclosure {
-            text-align: center;
-            font-size: 12px;
-            color: #777;
-            margin: 20px 0 30px;
-        }
+    .cta-btn:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 10px rgba(204, 0, 0, 0.3);
+    }
 
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-bottom: 30px;
-        }
+    .no-fees {
+      margin-top: 14px;
+      font-size: 0.8125rem;
+      color: var(--slate-500);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
 
-        .step {
-            text-align: center;
-            padding: 18px 10px;
-            border: 1px solid #eee;
-            border-radius: 12px;
-        }
+    /* Section Headers */
+    .section-title {
+      font-size: 1.625rem;
+      margin: 48px 0 24px 0;
+      text-align: center;
+      font-weight: 800;
+      color: var(--dark-gray);
+      letter-spacing: -0.02em;
+    }
 
-        .number {
-            width: 38px;
-            height: 38px;
-            line-height: 38px;
-            margin: auto;
-            border-radius: 50%;
-            background: #e31837;
-            color: white;
-            font-weight: bold;
-        }
+    /* Process Steps Grid */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
 
-        .step p {
-            margin-bottom: 0;
-            font-size: 14px;
-        }
+    .step-card {
+      background: white;
+      padding: 24px 20px;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      position: relative;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
 
-        .button {
-            display: block;
-            text-align: center;
-            text-decoration: none;
-            background: #e31837;
-            color: white;
-            padding: 17px 20px;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            transition: .2s;
-        }
+    .step-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: #CBD5E1;
+    }
 
-        .button:hover {
-            transform: translateY(-2px);
-            opacity: .92;
-        }
+    .step-number {
+      width: 32px;
+      height: 32px;
+      background: var(--target-red-light);
+      color: var(--target-red);
+      border: 1px solid var(--target-red-border);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.875rem;
+      margin-bottom: 16px;
+    }
 
-        .people {
-            text-align: center;
-            line-height: 2;
-            color: #555;
-            margin: 25px 0;
-        }
+    .step-card h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: var(--dark-gray);
+      font-weight: 700;
+    }
 
-        .faq {
-            border-top: 1px solid #eee;
-            padding-top: 25px;
-        }
+    .step-card p {
+      font-size: 0.875rem;
+      color: var(--slate-600);
+      line-height: 1.5;
+    }
 
-        .faq h3 {
-            margin-top: 0;
-        }
+    /* FAQ Accordion-Style Card Layout */
+    .faq-container {
+      background: white;
+      border-radius: 16px;
+      padding: 8px 32px;
+      margin-top: 20px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
 
-        .faq p {
-            color: #555;
-            line-height: 1.6;
-        }
+    .faq-item {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
 
-        /* CLAIM NOTIFICATION */
-        .claim-notification {
-            position: fixed;
-            left: 50%;
-            bottom: 18px;
-            transform: translateX(-50%) translateY(20px);
-            z-index: 99999;
+    .faq-item:last-child {
+      border-bottom: none;
+    }
 
-            width: max-content;
-            max-width: calc(100% - 24px);
+    .faq-question {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 6px;
+      color: var(--dark-gray);
+    }
 
-            background: #111;
-            color: white;
+    .faq-answer {
+      font-size: 0.9375rem;
+      color: var(--slate-600);
+      line-height: 1.6;
+    }
 
-            padding: 12px 18px;
-            border-radius: 10px;
+    /* Animated Live Notification Toast */
+    .toast-notification {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      background: rgba(255, 255, 255, 0.96);
+      padding: 14px 18px;
+      border-radius: 16px;
+      box-shadow: 0 12px 32px -4px rgba(15, 23, 42, 0.12), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      border-left: 4px solid var(--target-red);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      z-index: 1000;
+      max-width: 340px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transform-origin: bottom left;
+      animation: slideUpFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      will-change: transform, opacity;
+    }
 
-            box-shadow: 0 6px 25px rgba(0,0,0,.3);
+    .toast-notification.toast-hide {
+      animation: fadeOutDown 0.4s cubic-bezier(0.7, 0, 0.84, 0) forwards;
+    }
 
-            font-size: 14px;
-            line-height: 1.4;
+    .toast-avatar {
+      width: 40px;
+      height: 40px;
+      background: var(--target-red-light);
+      border: 1px solid var(--target-red-border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--target-red);
+      font-size: 0.9375rem;
+      flex-shrink: 0;
+      box-shadow: inset 0 2px 4px rgba(204, 0, 0, 0.06);
+    }
 
-            opacity: 0;
-            pointer-events: none;
+    .toast-content {
+      font-size: 0.8125rem;
+      line-height: 1.4;
+    }
 
-            transition:
-                opacity .35s ease,
-                transform .35s ease;
-        }
+    .toast-name {
+      font-weight: 700;
+      color: var(--dark-gray);
+    }
 
-        .claim-notification.show {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
+    .toast-time {
+      font-size: 0.75rem;
+      color: var(--slate-500);
+      margin-top: 2px;
+    }
 
-        .claim-icon {
-            margin-right: 5px;
-        }
+    /* Keyframe Animations */
+    @keyframes slideUpFade {
+      0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.92);
+      }
+      70% {
+        transform: translateY(-2px) scale(1.01);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
 
-        @media (max-width: 600px) {
+    @keyframes fadeOutDown {
+      0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+      }
+    }
 
-            .hero {
-                height: 300px;
-            }
+    /* Responsive Design Adjustments */
+    @media (max-width: 768px) {
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
 
-            .gift-card {
-                height: 185px;
-            }
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 16px;
+      }
 
-            .gift-card-amount {
-                font-size: 30px;
-                margin-top: 28px;
-            }
+      .hero {
+        padding: 32px 20px;
+        margin-top: 16px;
+      }
 
-            .content {
-                margin: -20px 12px 70px;
-                padding: 28px 18px;
-            }
+      h1 {
+        font-size: 1.75rem;
+      }
 
-            h1 {
-                font-size: 26px;
-            }
+      .subtitle {
+        font-size: 1rem;
+      }
 
-            .steps {
-                grid-template-columns: 1fr;
-            }
+      .social-proof {
+        flex-direction: column;
+        gap: 6px;
+        border-radius: 12px;
+        width: 100%;
+        padding: 12px;
+      }
 
-            .claim-notification {
-                bottom: 10px;
-                font-size: 13px;
-                padding: 10px 14px;
-            }
-        }
-    </style>
+      .social-proof span:nth-child(2),
+      .social-proof span:nth-child(4) {
+        display: none;
+      }
+
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-container {
+        padding: 4px 20px;
+      }
+
+      .toast-notification {
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        max-width: none;
+        transform-origin: bottom center;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- HERO BANNER -->
-<div class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
+  <header>
+    ⚠️ Limited Time Promotional Program — Limited Spots Available
+  </header>
 
-    <div class="hero-text">
-        <div class="gift-card">
+  <div class="container">
+    
+    <!-- Hero Card -->
+    <div class="hero">
+      <div class="badge">
+        <span></span> Official Shopper Feedback Survey
+      </div>
+      
+      <h1>Get Your <span>$750 Target Gift Card</span> For Sharing Your Feedback</h1>
+      
+      <!-- Target Logo Below Title -->
+      <div class="hero-logo">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="50" fill="#CC0000"/>
+          <circle cx="50" cy="50" r="33.33" fill="white"/>
+          <circle cx="50" cy="50" r="16.66" fill="#CC0000"/>
+        </svg>
+      </div>
 
-            <div class="gift-card-top">
-                <div class="gift-card-chip"></div>
-                <div class="gift-card-label">Gift Card</div>
-            </div>
+      <p class="subtitle">Target is rewarding customers for their valuable feedback. Complete the quick process to claim yours today.</p>
 
-            <div class="gift-card-amount">
-                Target $750
-            </div>
+      <!-- Social Proof -->
+      <div class="social-proof">
+        <span><span class="verified-icon">✓</span> Verified Program</span>
+        <span>|</span>
+        <span>Trusted by <strong>100k+ members</strong></span>
+        <span>|</span>
+        <span class="stars">★★★★★ 4.5/5</span>
+      </div>
 
-            <div class="gift-card-bottom">
-                <div class="gift-card-dots">
-                    •••• ••••
-                </div>
-
-                <div class="gift-card-tag">
-                    TARGET
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-
-<div class="content">
-
-    <div class="logo">
-        Target
-    </div>
-
-    <h1>
-        Rewards US - Target $750
-    </h1>
-
-    <p class="subtitle">
-        Complete the steps below to participate and unlock your reward opportunity.
-    </p>
-
-    <p class="disclosure">
-        Complete the required offers to finish your participation and have your reward eligibility reviewed.
-Finish the steps now and complete your reward journey! 🚀
-  <p class="disclosure">
-👉 Continue below to get started.
-    </p>
-
-    <div class="steps">
-
-        <div class="step">
-            <div class="number">1</div>
-            <p>Click Claim Your Reward</p>
-        </div>
-
-        <div class="step">
-            <div class="number">2</div>
-            <p>Enter Basic Info</p>
-        </div>
-
-        <div class="step">
-            <div class="number">3</div>
-            <p>Complete Partner Offers</p>
-        </div>
-
+      <!-- Main Action Button -->
+      <div>
+        <a href="https://giftclick.org/aff_c?offer_id=250&aff_id=181591" class="cta-btn" target="_blank" rel="noopener">Claim Your Reward Now</a>
+        <p class="no-fees">🔒 100% Free — No Upfront Fees Required</p>
+      </div>
     </div>
 
+    <!-- Claim Steps -->
+    <h2 class="section-title">How To Claim Your $750 Reward</h2>
+    <div class="steps-grid" id="claim">
+      
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3>Click The Button</h3>
+        <p>Click the "Claim Your Reward" button above to initiate your submission session.</p>
+      </div>
 
-    <a
-    class="button"
-    href="https://linkthem.net/aff_c?offer_id=250&aff_id=181591"
-    onclick="gtag('event', 'claim_reward_click', {
-        event_category: 'affiliate',
-        event_label: 'target_750'
-    });"
->
-        🎁 Claim Your Reward
-    </a>
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3>Enter Basic Info</h3>
+        <p>Provide your primary name and email address so we know where to send your reward.</p>
+      </div>
 
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3>Complete Offers</h3>
+        <p>Complete 3 to 5 featured partner deals/tasks to sponsor your gift card value.</p>
+      </div>
 
-    <div class="people">
-
-        ✅ Thousands of users are joining today<br>
-
-        ⭐ Complete required offers to qualify<br>
-
-        🔒 No upfront payment required
+      <div class="step-card">
+        <div class="step-number">4</div>
+        <h3>Receive $750</h3>
+        <p>Once verified, your digital $750 Target Gift Card will be delivered directly to your email.</p>
+      </div>
 
     </div>
 
+    <!-- FAQ Section -->
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-container">
+      
+      <div class="faq-item">
+        <div class="faq-question">How long does it take?</div>
+        <div class="faq-answer">Most deals take between 2–5 minutes each. Some may require a short sign-up, app installation, or trial completion to fully verify.</div>
+      </div>
 
-    <div class="faq">
+      <div class="faq-item">
+        <div class="faq-question">What are deals?</div>
+        <div class="faq-answer">Deals are sponsored promotions from brand partners (such as mobile games, subscription services, or free trials) that fund the cost of your $750 reward.</div>
+      </div>
 
-        <h3>
-            How it works
-        </h3>
+      <div class="faq-item">
+        <div class="faq-question">How many deals do I have to do?</div>
+        <div class="faq-answer">You need to complete a minimum of 3 to 5 partner deals depending on the specific tier required to reach the full $750 threshold.</div>
+      </div>
 
-        <p>
-            1. Click the button and enter your information.
-        </p>
-
-        <p>
-            2. Complete the required promotional offers shown on the offer page.
-        </p>
-
-        <p>
-            3. After completing all the required steps, you’ll be eligible to receive your reward.
-
-        </p>
+      <div class="faq-item">
+        <div class="faq-question">When will I receive my reward?</div>
+        <div class="faq-answer">Once your deal completions are verified by our system, your digital gift card code is dispatched via email within 24–48 hours.</div>
+      </div>
 
     </div>
 
-</div>
+  </div>
 
+  <!-- Real-time Claim Toast Notification -->
+  <div class="toast-notification" id="toast">
+    <div class="toast-avatar" id="toast-initial">O</div>
+    <div class="toast-content">
+      <div><span class="toast-name" id="toast-name">Olivia</span> just claimed a</div>
+      <div style="font-weight:700; color: var(--target-red);">$750 Target Coupon</div>
+      <div class="toast-time">1 second ago</div>
+    </div>
+  </div>
 
-<!-- CLAIM NOTIFICATION -->
-<div
-    id="claim-notification"
-    class="claim-notification"
-    aria-live="polite"
->
-    <span class="claim-icon">🎉</span>
-    <span id="claim-message">
-        A participant successfully received the reward! 🥳
-    </span>
-</div>
+  <script>
+    const names = [
+      "Olivia", "Emma", "Charlotte", "Amelia", "Sophia", "Mia", "Isabella", "Ava", "Evelyn", "Luna",
+      "Harper", "Sofia", "Camila", "Eleanor", "Elizabeth", "Violet", "Emily", "Hazel", "Penelope", "Aria",
+      "Chloe", "Layla", "Mila", "Nora", "Abigail", "Ella", "Avery", "Scarlett", "Maya", "Lila",
+      "Grace", "Lily", "Aurora", "Riley", "Zoey", "Isla", "Stella", "Victoria", "Naomi", "Elena",
+      "Willow", "Alice", "Lucy", "Ivy", "Paisley", "Audrey", "Claire", "Sadie", "Genesis", "Kennedy",
+      "Liam", "Noah", "Oliver", "James", "Elijah", "William", "Henry", "Lucas", "Benjamin", "Theodore",
+      "Mateo", "Levi", "Sebastian", "Daniel", "Jack", "Alexander", "Owen", "Asher", "Jackson", "Leo"
+    ];
 
+    const toast = document.getElementById('toast');
+    const toastName = document.getElementById('toast-name');
+    const toastInitial = document.getElementById('toast-initial');
 
-<script>
+    function showRandomNotification() {
+      const randomName = names[Math.floor(Math.random() * names.length)];
+      
+      toastName.textContent = randomName;
+      toastInitial.textContent = randomName.charAt(0);
+      
+      // Reset animation classes for re-triggering
+      toast.classList.remove('toast-hide');
+      toast.style.display = 'flex';
 
-/*
- * PARTICIPANT NAMES
- *
- * These are taken from the list you provided.
- *
- * IMPORTANT:
- * Only use a person's name here if you have permission
- * to display it publicly and the corresponding claim is real.
- *
- * The supplied file contains names but does NOT contain
- * country information, so this script does not invent countries.
- */
-
-const participants = [
-    "Maggie Brock",
-    "Julio Magana",
-    "Amaris Wilson",
-    "Daniel Anderson",
-    "Ella Schneider",
-    "Raymond Tate",
-    "Skye Rice",
-    "Graham Berry",
-    "Annabelle Camacho",
-    "Tatum McCarthy",
-    "Kira Colon",
-    "Bruce Calhoun",
-    "Thalia Ramos",
-    "Angel Anderson",
-    "Ella Martin",
-    "Mateo Smith",
-    "Olivia Tang",
-    "Rogelio Rice",
-    "Ada Vasquez",
-    "Rowan Perry",
-    "Clara Pennington",
-    "Bobby Dickerson",
-    "Opal Reid",
-    "Josue Sandoval",
-    "Elsie Moody",
-    "Ryland Morales",
-    "Skylar Butler",
-    "Ryder Lee",
-    "Scarlett Bridges",
-    "Mohammed Mays",
-    "Denisse Rice",
-    "Graham Cline",
-    "Lina Garrison",
-    "Noe Bowman",
-    "Fiona Flores",
-    "Lincoln Mullins",
-    "Maliyah Dalton",
-    "Fletcher Coffey",
-    "Paola Hunt",
-    "Jesus Benson",
-    "Collins Espinoza",
-    "Dallas Coffey",
-    "Paola Carroll",
-    "Oscar Parks",
-    "Ainsley Hendricks",
-    "Dash Dickson",
-    "Emmalynn Fernandez",
-    "Bentley Fisher",
-    "Arya Malone",
-    "Ruben Knox",
-    "Kallie Zavala",
-    "Dillon Lloyd",
-    "Emely Shepherd",
-    "Ronald Harrington",
-    "Legacy Hunt",
-    "Jesus Hayes",
-    "Iris Leonard",
-    "Ricardo Boyd",
-    "Georgia Huffman",
-    "Chris McPherson",
-    "Emmaline Dyer",
-    "Atreus O’Neill",
-    "Kenna Villa",
-    "Clay Lucero",
-    "Ila O’Neill",
-    "Marcel Vaughan",
-    "Nancy Pollard",
-    "Jad Lewis",
-    "Ellie Small",
-    "Rudy Jarvis",
-    "Elisabeth Gill",
-    "Matthias Carey",
-    "Alora Hopkins",
-    "Ali Montes",
-    "Roselyn Durham",
-    "Kellen Adams",
-    "Stella Sanchez",
-    "Joseph Camacho",
-    "Armani Hickman",
-    "Jakobe Wilkinson",
-    "Siena Clarke",
-    "Stetson Kelly",
-    "Ruby Clay",
-    "Yosef Nielsen",
-    "Vienna Harrison",
-    "Gavin Hunter",
-    "Khloe Boone",
-    "Mauricio Russell",
-    "Raelynn Krueger",
-    "Jones Alvarado",
-    "Blake Cross",
-    "Fabian Knox",
-    "Kallie Esquivel",
-    "Bridger Frederick",
-    "Sariyah Pittman",
-    "Valentino Sanchez",
-    "Aria Higgins",
-    "Sterling Rivera",
-    "Lillian Garrison",
-    "Noe Hurst",
-    "Adalee Calhoun",
-    "Gary Malone",
-    "Skyler Griffith",
-    "Franklin Newman",
-    "Oaklynn Vargas",
-    "Ryker Rocha",
-    "Emmie George",
-    "Mark Burns",
-    "Emerson Melendez",
-    "Nikolas Nelson",
-    "Everly House",
-    "Yehuda Castro",
-    "Eloise Horn",
-    "Wilson McDonald",
-    "Daisy Salgado",
-    "Trace Craig",
-    "Brynn Osborne",
-    "Augustus Jensen",
-    "Jane Bravo",
-    "Genesis Savage",
-    "Louise Sheppard",
-    "Trent Payne",
-    "London Shaw",
-    "Elliot Waller",
-    "Whitley Huerta",
-    "Douglas Doyle",
-    "Annalise Weiss",
-    "Koa Todd",
-    "Zariah Rangel",
-    "Saint Vang",
-    "Madisyn Reyna",
-    "Reginald Lucas",
-    "Phoenix Garrison",
-    "Noe Chapman",
-    "Zuri Booth",
-    "Chaim McKee",
-    "Kori Xiong",
-    "Azrael Cervantes",
-    "Aylin Duffy",
-    "Kyng Chapman",
-    "Zuri Douglas",
-    "Derek Santana",
-    "Myra McGee",
-    "Conner Ali",
-    "Zelda Fletcher",
-    "Jay Gilmore",
-    "Chanel Wise",
-    "Frederick Lane",
-    "Amy Shaw",
-    "Elliot Melendez",
-    "Bethany Sierra",
-    "Dayton Sosa",
-    "Cassandra Carlson",
-    "Paul Phan",
-    "Elsa Figueroa",
-    "Spencer Becker",
-    "Laura Pollard",
-    "Jad McKay",
-    "Leanna Vo",
-    "Gordon Dudley",
-    "Hadleigh Bautista",
-    "Raul Romero",
-    "Eliza Bishop",
-    "Paxton Trujillo",
-    "Danielle Erickson",
-    "Johnny Wells",
-    "Cecilia Hardy",
-    "Jayceon Levy",
-    "Flora Bruce",
-    "Uriah Padilla",
-    "Maggie Olson",
-    "Malachi Olson",
-    "Isabel Melendez",
-    "Nikolas Enriquez",
-    "Nellie Quinn",
-    "Rhys Berger",
-    "Laylah Jacobs",
-    "Bryan Holloway",
-    "Mae Church",
-    "Terrance Crawford",
-    "Aubree Bradley",
-    "Richard Clark",
-    "Chloe Parrish",
-    "Karsyn Pacheco",
-    "Paris Richards",
-    "Holden Ortiz",
-    "Anna Nunez",
-    "Caden Brennan",
-    "Elodie Olson",
-    "Malachi Nunez",
-    "Mya Garcia",
-    "James Jordan",
-    "Adalynn Carter",
-    "Maverick Munoz",
-    "Kehlani Mejia",
-    "Atticus Cohen",
-    "Destiny Xiong",
-    "Azrael Dixon",
-    "Blakely Duarte",
-    "Abdullah Campbell",
-    "Addison Dixon",
-    "Camden Rodriguez",
-    "Evelyn Burnett",
-    "Davis Montgomery",
-    "Evangeline Myers",
-    "Adam Barrera",
-    "Beatrice Hoover",
-    "Jaziel Blanchard",
-    "Layne Bradshaw",
-    "Emory McMahon",
-    "Belen Vo",
-    "Gordon Roth",
-    "Elliot Carpenter",
-    "Jeremy Leblanc",
-    "Novalee Harding",
-    "Brodie Koch",
-    "Milana Crane",
-    "Fox Tucker",
-    "Esther Sherman",
-    "Adan Sawyer",
-    "Marina Cisneros",
-    "Alden Richmond",
-    "Whitney Hebert",
-    "Guillermo Sheppard",
-    "Veda Wiggins",
-    "Azariah Coleman",
-    "Julia Khan",
-    "Kendrick Santos",
-    "Alana Blake",
-    "Zyaire Miller",
-    "Isabella Zuniga",
-    "Sincere Chang",
-    "Ophelia Becker",
-    "Lawson Livingston",
-    "Milena Bowen",
-    "Trevor Ibarra",
-    "Madilynn Lim",
-    "Cal Stanton",
-    "Jaycee Mathews",
-    "Jamir McKee",
-    "Kori Chung",
-    "Ira Atkinson",
-    "Jazmin Vaughan",
-    "Castiel Erickson",
-    "Sabrina Fernandez",
-    "Bentley Monroe",
-    "Carly Griffin",
-    "Ayden Anthony",
-    "Macy Lewis",
-    "Wyatt Franklin",
-    "Angela Kelley",
-    "Eric Frederick",
-    "Sariyah Valentine",
-    "Demetrius Bates",
-    "Madilyn Mayo",
-    "Jericho Delacruz",
-    "Celine Pennington",
-    "Bobby Peterson",
-    "Caroline Schmitt",
-    "Murphy Cameron",
-    "Julie Ali",
-    "Arjun Herman",
-    "Paulina Farley",
-    "Graysen Morgan",
-    "Delilah Summers",
-    "Darius Rodgers",
-    "Selah Park",
-    "Daxton Lara",
-    "Heidi Nava",
-    "Stefan Nixon",
-    "Deborah Aguilar",
-    "Milo Wiggins",
-    "Capri Graves",
-    "Cesar Hayden",
-    "Avayah Rosales",
-    "Wilder Ashley",
-    "Khalani Hale",
-    "Ezequiel Andrews",
-    "Payton Lam",
-    "Bodie Benitez",
-    "Aliza Larsen",
-    "Brycen Howe",
-    "Persephone Jarvis",
-    "Marlon Burgess",
-    "Emory Warner",
-    "Jaxton Woods",
-    "Reese Lara",
-    "Caiden Dougherty",
-    "Alisson Briggs",
-    "Case Chung",
-    "Rivka Hopkins",
-    "Ali Kelly",
-    "Ruby Flowers",
-    "Saul Avalos",
-    "Paloma Colon",
-    "Bruce Fry",
-    "Clarissa Cummings",
-    "Raiden Mayo",
-    "Aarya Brooks",
-    "Jordan Ray",
-    "Ruth Gillespie",
-    "Forest Collins",
-    "Kinsley Knapp",
-    "Boden Cantu",
-    "Galilea Yates",
-    "Braylon Rivera",
-    "Lillian Luna",
-    "Erick Greene",
-    "Selena Strong",
-    "Axl Goodwin",
-    "Shiloh Glenn",
-    "Zaid Hubbard",
-    "Rosie Mercado",
-    "Abram Espinoza",
-    "Lucille Andersen",
-    "Alistair Simmons",
-    "Reagan Cardenas",
-    "Johnathan McCullough",
-    "Hana Barber",
-    "Solomon Henry",
-    "Summer Butler",
-    "Ryder Owens",
-    "Amaya Dean",
-    "Ronan Phan",
-    "Elsa Wang",
-    "Cohen McPherson",
-    "Emmaline David",
-    "Alonso Phillips",
-    "Naomi Golden",
-    "Amias Fischer",
-    "Maci Franco",
-    "Gage Herman",
-    "Paulina Fletcher",
-    "Jay Macdonald",
-    "Rosalia Mann",
-    "Nehemiah Carrillo",
-    "Kaylani Hughes",
-    "Everett Skinner",
-    "Mara Williamson",
-    "Emerson Hardin",
-    "Vada Greer",
-    "Koda Roth",
-    "Elliot Villalobos",
-    "Reuben Reeves",
-    "Lana Manning",
-    "Seth Terry",
-    "Wren Trejo",
-    "Wesson Williamson",
-    "Catherine Knight",
-    "Beckett Lane",
-    "Amy Bernal",
-    "Eithan Weiss",
-    "Lennox Collins",
-    "Miles Reese",
-    "Rosemary Fowler",
-    "Kameron Mathews",
-    "Sloan Vazquez",
-    "Jesse Lewis",
-    "Ellie Marsh",
-    "Bo Wyatt",
-    "Liberty Evans",
-    "Elias Donovan",
-    "Azariah Reyna",
-    "Reginald Carrillo",
-    "Kaylani Rhodes",
-    "Titus Horton",
-    "Aitana Bond",
-    "Roger Li",
-    "Paige Terrell",
-    "Jaxen Prince",
-    "Greta Tate",
-    "Dalton Armstrong",
-    "Presley Ford",
-    "Luis Bradshaw",
-    "Berkley Owens",
-    "Adriel Gilbert",
-    "Jocelyn Cordova",
-    "Vicente Chung",
-    "Rivka Bernard",
-    "Jair Fry",
-    "Clarissa Berger",
-    "Byron Vaughn",
-    "Reign Rollins",
-    "Wes Carson",
-    "Nalani Mendez",
-    "Arthur Charles",
-    "Jenna Quintana",
-    "Kelvin Blevins",
-    "Aila McCullough",
-    "Briar Jenkins",
-    "Rylee Goodman",
-    "Philip White",
-    "Layla Lane",
-    "Matias Montes",
-    "Roselyn Spence",
-    "Cillian Payne",
-    "London Hale",
-    "Ezequiel Medina",
-    "Elliana Parks",
-    "Gianni Harding",
-    "Aniya Ingram",
-    "Tripp Thomas",
-    "Elizabeth Malone",
-    "Ruben Lynch",
-    "Malia Roberson",
-    "Shepherd Barajas",
-    "Keilani Santana",
-    "Mohamed Sweeney",
-    "Yara Huang",
-    "Ayaan Robertson",
-    "Harmony Dennis",
-    "Emanuel Woods",
-    "Reese McCormick",
-    "Jasiah Scott",
-    "Aurora Powell",
-    "Bennett Felix",
-    "Paisleigh O’Neill",
-    "Marcel Sheppard",
-    "Veda Solis",
-    "Ronin Hunt",
-    "Genevieve Lu",
-    "Duncan Lara",
-    "Heidi Fitzpatrick",
-    "Blaze Dunn",
-    "Olive Allen",
-    "Carter Wilkinson",
-    "Siena Delacruz",
-    "Memphis Graham",
-    "Alaia Deleon",
-    "Nasir Brennan",
-    "Elodie Lang",
-    "Wells Woodward",
-    "Drew Mayer",
-    "Yahir Ryan",
-    "Morgan McPherson",
-    "Foster Meyers",
-    "Leyla Malone",
-    "Ruben Barrera",
-    "Beatrice Quinn",
-    "Rhys Tang",
-    "Belle Chandler",
-    "Royal Santos",
-    "Alana Robles",
-    "Otto Ali",
-    "Zelda Burnett",
-    "Davis Hunt",
-    "Genevieve Boyle",
-    "Robin Orozco",
-    "Renata Cline",
-    "Cullen Espinoza",
-    "Lucille Elliott",
-    "Blake Matthews",
-    "Lila Washington",
-    "Juan Flowers",
-    "Ariya Byrd",
-    "Cristian Sloan",
-    "Selene Collier",
-    "Edison Romero",
-    "Eliza Clay",
-    "Yosef Graves",
-    "Elle Roy",
-    "Marcelo Simpson",
-    "Anastasia Tyler",
-    "Emmitt Woods",
-    "Reese Ross",
-    "Wesley Liu",
-    "Kate Shannon",
-    "Eliel Yu",
-    "Navy Brennan",
-    "Curtis Berry",
-    "Annabelle Becker",
-    "Lawson Hughes",
-    "Samantha Larson",
-    "Rafael Frost",
-    "Paula Becker",
-    "Lawson Haley",
-    "Addilynn Hanson",
-    "Khalil Davidson",
-    "Jayla Patel",
-    "Parker Stout",
-    "Chana Richardson",
-    "Robert Blankenship",
-    "Rosalee Moreno",
-    "Myles Jefferson",
-    "Julieta Berg",
-    "Cayson McLaughlin",
-    "Stephanie Powers",
-    "Sean Dejesus",
-    "Julissa Branch",
-    "Keenan Short",
-    "Cheyenne Prince",
-    "Aron McCormick",
-    "Macie Person",
-    "Moses Glover",
-    "Alessia Meza",
-    "Lucian Pittman",
-    "Marie Duarte",
-    "Abdullah Church",
-    "Ayleen Middleton",
-    "Misael Woodard",
-    "Aubrie Berry",
-    "Adonis Baxter",
-    "Lara Arellano",
-    "Kellan Hester",
-    "Zendaya Krueger",
-    "Jones Flowers",
-    "Ariya Vasquez",
-    "Rowan Walker",
-    "Hazel Maynard",
-    "Landry Ramos",
-    "Alice Patton",
-    "Moises Valentine",
-    "August Huffman",
-    "Chris Rose",
-    "Magnolia Wilkinson",
-    "Leonard Mayo",
-    "Aarya Livingston",
-    "Ambrose Hudson",
-    "Kamila Mullins",
-    "Allen Prince",
-    "Greta Villegas",
-    "Clyde Singh",
-    "Vivienne Brewer",
-    "Cruz Ibarra",
-    "Madilynn Ayala",
-    "Tanner Christian",
-    "Anahi McClure",
-    "Reese Hinton",
-    "Jaelynn Roach",
-    "Caspian Macdonald",
-    "Rosalia Stewart",
-    "Nolan Cantu",
-    "Galilea Cervantes",
-    "Kamari Nichols",
-    "Aliyah Patton",
-    "Moises Evans",
-    "Eliana Graves",
-    "Cesar Bernal",
-    "Emmeline Shepard",
-    "Damari Sharp",
-    "Camryn Perry",
-    "Waylon Doyle",
-    "Annalise Vazquez",
-    "Jesse Mullen",
-    "Shay Lester",
-    "Lee Brown",
-    "Charlotte Crane",
-    "Fox May",
-    "Adriana Wilkinson",
-    "Leonard Ryan",
-    "Morgan Lowe",
-    "Julius Spencer",
-    "Alyssa Poole",
-    "Quincy Briggs",
-    "Alia Patrick",
-    "Derrick Dominguez",
-    "Raegan Quinn",
-    "Rhys Tucker",
-    "Esther Blackwell",
-    "Marcellus Randolph",
-    "Kailey McMahon",
-    "Jakob Conley",
-    "Salem Jimenez",
-    "Silas Suarez",
-    "Jimena Rivers",
-    "Bear Casey",
-    "Sylvia Brewer",
-    "Cruz Whitaker",
-    "Ivanna Sellers",
-    "Madden Acevedo",
-    "Ashlynn Fleming",
-    "Fernando Cox",
-    "Sadie Pitts",
-    "Trey Bender",
-    "Lilyana Gallegos",
-    "Jonas Galvan",
-    "Dallas Case",
-    "Bentlee Lugo",
-    "Kaylie Sheppard",
-    "Trent Clay",
-    "Aliana Reilly",
-    "Alvaro Miles",
-    "Alessandra Padilla",
-    "Jaden Gardner",
-    "Jordyn Santiago",
-    "Beckham Hayes",
-    "Iris Pruitt",
-    "Gatlin Bernard",
-    "Barbara Hunter",
-    "Archer Aguirre",
-    "Ariah Meyers",
-    "Julien Hayes",
-    "Iris Pearson",
-    "Gunner Nielsen",
-    "Vienna Montgomery",
-    "Maximiliano Reed",
-    "Valentina Osborne",
-    "Augustus Perez",
-    "Eleanor Tang",
-    "Rogelio Stuart",
-    "Stormi Thornton",
-    "Malik Brown",
-    "Charlotte Patel",
-    "Parker Shah",
-    "Angelica Garcia",
-    "James Duffy",
-    "Addisyn Charles",
-    "Conrad Roth",
-    "Elliot Li",
-    "Jorge Carlson",
-    "Kali Rice",
-    "Graham Mullen",
-    "Shay Poole",
-    "Quincy Goodman",
-    "Carolina Rowe",
-    "Kamden Cline",
-    "Lina Rowland",
-    "Eliezer Leon",
-    "Amora Orozco",
-    "Keanu Stokes",
-    "Miranda Powell",
-    "Bennett Smith",
-    "Olivia Howe",
-    "Alaric Peters",
-    "Leila Ayers",
-    "Ulises Hawkins",
-    "Ariel Cabrera",
-    "Cade McCarthy",
-    "Kira Roman",
-    "Kian Bullock",
-    "Winnie Dennis",
-    "Emanuel Lopez",
-    "Gianna Sanders",
-    "Jose Andersen",
-    "Zoie Kramer",
-    "Kylan Chan",
-    "Hattie Dominguez",
-    "Kaden McDonald",
-    "Daisy Brooks",
-    "Jordan Edwards",
-    "Ivy Woods",
-    "Zion Delarosa",
-    "Iyla Blanchard",
-    "Adler Berger",
-    "Laylah Cannon",
-    "Archie Richardson",
-    "Allison Lang",
-    "Wells Bravo",
-    "Amoura Morris",
-    "Christian Peck",
-    "Crystal Johnson",
-    "Noah Fields",
-    "Annie Kline",
-    "Ramon Francis",
-    "Daniella Vincent",
-    "Aarav Elliott",
-    "Noelle Ellis",
-    "Cole Dejesus",
-    "Julissa Parra",
-    "Davion Chavez",
-    "Nevaeh Parks",
-    "Gianni Cain",
-    "Kendra Lyons",
-    "Cyrus McFarland",
-    "Annika Bauer",
-    "Kieran Horton",
-    "Aitana Horton",
-    "Garrett Barber",
-    "Cassidy Klein",
-    "Marco Stuart",
-    "Stormi Hail",
-    "Hector Doyle",
-    "Annalise Duffy",
-    "Kyng Ho",
-    "Calliope Hester",
-    "Rene Peterson",
-    "Caroline Eaton",
-    "Leighton McLean",
-    "Sky Green",
-    "Anthony Choi",
-    "Karla Ashley",
-    "Kylen Finley",
-    "Jovie O’Connell",
-    "Jovanni Shepard",
-    "Noor Carey",
-    "Watson Klein",
-    "Elianna Ramos",
-    "Angel Mejia",
-    "Saylor Raymond",
-    "Maurice Fisher",
-    "Arya Bond",
-    "Roger Keith",
-    "Elyse Graham",
-    "Giovanni Thomas",
-    "Elizabeth Savage",
-    "Keaton Douglas",
-    "Aniyah Kim",
-    "Roman Fisher",
-    "Arya Person",
-    "Moses Lu",
-    "Emani Levy",
-    "Harold Jacobson",
-    "Royal Sierra",
-    "Dayton Lozano",
-    "Cecelia Bernard",
-    "Jair Harmon",
-    "Maren Flores",
-    "Lincoln Bauer",
-    "Haley Wu",
-    "Kyson Bentley",
-    "Jaylin Goodman",
-    "Philip Jensen",
-    "Jane Walton",
-    "Dominick Drake",
-    "Jayleen Gentry",
-    "Magnus Finley",
-    "Jovie Schmitt",
-    "Murphy Stevenson",
-    "Regina Hahn",
-    "Kabir Gates",
-    "Melina Bradley",
-    "Richard McDowell",
-    "Rayna Cox",
-    "Connor Wilkinson",
-    "Siena Holt",
-    "Niko Marsh",
-    "Adelina Barrett",
-    "Angelo Newman",
-    "Oaklynn Reed",
-    "Easton Ruiz",
-    "Emery Schneider",
-    "Raymond Ramos",
-    "Alice Rodgers",
-    "Mathias Patel",
-    "Madeline Mitchell",
-    "Jaxon Price",
-    "Piper Gutierrez",
-    "Luca Stevenson",
-    "Regina Horne",
-    "Zev Villarreal",
-    "Jazlyn Villanueva",
-    "Huxley Hudson",
-    "Kamila Clements",
-    "Fisher McCormick",
-    "Macie Donaldson",
-    "Canaan Gibson",
-    "Eden Sellers",
-    "Madden Sherman",
-    "Addilyn Stout",
-    "Callahan Corona",
-    "Marianna Lang",
-    "Wells Benson",
-    "Collins Peters",
-    "Patrick Robbins",
-    "Stevie Bartlett",
-    "Kace Best",
-    "Lexie Ross",
-    "Wesley Mason",
-    "Sienna Serrano",
-    "Milan Bradshaw",
-    "Berkley Yu",
-    "Bryant Lee",
-    "Scarlett Palacios",
-    "Thaddeus Klein",
-    "Elianna Rush",
-    "Kaiser Phelps",
-    "Laney Ingram",
-    "Tripp Dejesus",
-    "Julissa Sherman",
-    "Adan Estes",
-    "Brittany Lopez",
-    "Michael Cardenas",
-    "Raven Goodwin",
-    "Kaison Mata",
-    "Lillie Franco",
-    "Gage Davis",
-    "Mia Massey",
-    "Donald Kaur",
-    "Holland Cardenas",
-    "Johnathan Sampson",
-    "Meilani Patton",
-    "Moises Brewer",
-    "Thea Contreras",
-    "Emilio Glover",
-    "Alessia McGuire",
-    "Casey Andersen",
-    "Zoie Lambert",
-    "Mario Fisher",
-    "Arya Case",
-    "Bentlee Leach",
-    "Martha Clay",
-    "Yosef Harris",
-    "Penelope Sparks",
-    "Drake Underwood",
-    "Ensley Meyers",
-    "Julien Rasmussen",
-    "Esperanza Miles",
-    "Jared Santos",
-    "Alana Hughes",
-    "Everett Weaver",
-    "Teagan Wu",
-    "Kyson Patrick",
-    "Lyra Rogers",
-    "Colton Clark",
-    "Chloe Archer",
-    "Ephraim Andrade",
-    "Emmy Waller",
-    "Marley Parks",
-    "Ainsley Trejo",
-    "Wesson Delgado",
-    "Alani Stanton",
-    "Zyair Page",
-    "Cataleya Pacheco",
-    "Erik Brady",
-    "Ryan Rodriguez",
-    "Henry Brady",
-    "Ryan Ramos",
-    "Angel Mata",
-    "Lillie McDonald",
-    "Calvin Garcia",
-    "Amelia Reyna",
-    "Reginald Duke",
-    "Melani Pena",
-    "Marcus Atkinson",
-    "Jazmin Frye",
-    "Franco Ellison",
-    "Raina Ball",
-    "Shane Khan",
-    "Mabel Olson",
-    "Malachi Merritt",
-    "Kaisley Arias",
-    "Alec Kerr",
-    "Baylee Benton",
-    "Jamal Tucker",
-    "Esther Randall",
-    "Trenton Wilkerson",
-    "Janiyah Merritt",
-    "Colten Kline",
-    "Sevyn Vang",
-    "Jimmy Galvan",
-    "Dallas Pollard",
-    "Jad Ho",
-    "Calliope Craig",
-    "Odin Fowler",
-    "Lennon Shannon",
-    "Eliel Wong",
-    "Adelaide Ayers",
-    "Ulises Adams",
-    "Stella Everett",
-    "Camilo Mosley",
-    "Zaniyah Gaines",
-    "Talon Pruitt",
-    "Brylee Ellison",
-    "Kye Lugo",
-    "Kaylie Cantu",
-    "Anakin Tang",
-    "Belle Christian",
-    "Ledger McCormick",
-    "Macie Novak",
-    "Bishop Tate",
-    "Skye Rollins",
-    "Wes Person",
-    "Dylan Morgan",
-    "Hunter Proctor",
-    "Chandler Cisneros",
-    "Alden Davenport",
-    "Adrianna Terrell",
-    "Jaxen Bradley",
-    "Vanessa Lamb",
-    "Kaysen Cunningham",
-    "Marley Wilson",
-    "Daniel McClain",
-    "Marleigh Rasmussen",
-    "Will McCoy",
-    "Mckenzie Cordova",
-    "Vicente Simmons",
-    "Reagan Mendoza",
-    "Dominic Potts",
-    "Ellison White",
-    "Aiden Meyer",
-    "Sara Jacobs",
-    "Bryan Rhodes",
-    "Tatum Lamb",
-    "Kaysen Burch",
-    "Freyja Arroyo",
-    "Alberto Combs",
-    "Irene Armstrong",
-    "Grant Andrade",
-    "Emmy Simpson",
-    "Elliott Russo",
-    "Tinsley Rivers",
-    "Bear Garza",
-    "River Buckley",
-    "Aryan Eaton",
-    "Miley Robbins",
-    "Finnegan Rosario",
-    "Louisa Choi",
-    "Khari Preston",
-    "Indie McCarthy",
-    "Devin Hale",
-    "Brinley Christian",
-    "Ledger Ventura",
-    "Zora Craig",
-    "Odin Campbell",
-    "Addison Browning",
-    "Rohan Torres",
-    "Violet Benitez",
-    "Justice Wilkinson",
-    "Siena Rivas",
-    "Damon Warner",
-    "Wynter Fletcher",
-    "Jay Cuevas",
-    "Adele Hartman",
-    "Baker Simpson",
-    "Anastasia Miles",
-    "Jared Lozano",
-    "Cecelia Kline",
-    "Ramon Park",
-    "Lia Cherry",
-    "Rome Ponce",
-    "Aileen McClain",
-    "Mitchell York",
-    "Milan Powell"
-];
-
-
-/*
- * NOTIFICATION
- */
-
-const notification =
-    document.getElementById("claim-notification");
-
-const message =
-    document.getElementById("claim-message");
-
-let currentIndex = 0;
-
-
-function showParticipant() {
-
-    if (!participants.length) {
-        return;
+      // Trigger exit animation before hiding
+      setTimeout(() => {
+        toast.classList.add('toast-hide');
+        setTimeout(() => {
+          toast.style.display = 'none';
+        }, 400); // Duration of fadeOutDown animation
+      }, 4000);
     }
 
-    const name =
-        participants[currentIndex];
-
-    message.textContent =
-        `${name} successfully received their reward! 🥳.`;
-
-    notification.classList.add("show");
-
-    setTimeout(() => {
-        notification.classList.remove("show");
-    }, 4000);
-
-    currentIndex++;
-
-    if (currentIndex >= participants.length) {
-        currentIndex = 0;
-    }
-}
-
-
-/*
- * Start after page loads.
- */
-
-setTimeout(showParticipant, 2500);
-
-
-/*
- * Show another notification every 7 seconds.
- */
-
-setInterval(showParticipant, 7000);
-
-</script>
+    toast.style.display = 'none';
+    setTimeout(showRandomNotification, 2000);
+    setInterval(showRandomNotification, 8000);
+  </script>
 
 </body>
 </html>
-```
